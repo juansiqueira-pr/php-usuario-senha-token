@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <?php 
@@ -12,6 +13,7 @@
         $tokenV = "PROGRAMAR";
 
         $mensagem = "";
+        $mensagemsucess = "";
 
         //**************//
 
@@ -22,13 +24,13 @@
 
         if ($usuario !== '' && $senha !== '') {
             if ($usuario === $usuarioV && $senha === $senhaV) {
-                $mensagem = "Usuário e senha corretos";
+                $mensagemsucess = "Usuário e senha corretos";
             } else {
                 $mensagem = "Usuário ou senha incorretos";
             }
         } elseif ($token !== '') {
             if ($token === $tokenV) {
-                $mensagem = "Token correto";
+                $mensagemsucess = "Token correto";
             } else {
                 $mensagem = "Token incorreto";
             }
@@ -49,9 +51,10 @@
                 <br><br>
                 <input type="password" id="token" name="token" placeholder="Digite o token">
                 <br><br>
-                <input type="submit">
+                <input type="submit" class="button" value="Enviar ">
             </form>
-            <p><?php echo $mensagem; ?></p>
+            <p class="mensagem"><?php echo $mensagem; ?></p>
+            <p class="mensagemsucess"><?php echo $mensagemsucess; ?></p>
         </div>
     </main>
 
